@@ -50,3 +50,25 @@ img {
 .link {
     text-decoration: none;
 }
+
+[class*="__container"] {
+    max-width: 100rem;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include mobile {
+        max-width: 550px;
+    }
+
+    @include tablet {
+        max-width: 1024px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    @include desktop {
+        width: 100%;
+        max-width: 1280px;
+    }
+}
