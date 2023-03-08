@@ -1,0 +1,44 @@
+.btn {
+    width: 187px;
+    height: 55px;
+    padding: 8px;
+
+    border-radius: 49px;
+    cursor: pointer;
+    border: none;
+
+    font-family: inherit;
+    @include fonts(400, 12, 1.36, 0.09em);
+
+    text-transform: uppercase;
+    border-image-source: linear-gradient(#E0A872 100%, #F8E4BE 100%, #FFF3E0 100%, #E0A872 100%);
+    background: rgba(247, 225, 188, 0.3);
+    color: $secondary-color;
+
+    @include transition ();
+    transition-property: color, background-color;
+
+    &:focus,
+    &:hover {
+        border-radius: 49px;
+        border-color: $accent-color;
+        color: $main-fonts-color;
+        text-shadow: 1px 1px 1px $accent-color;
+        background: transparent;
+    }
+}
+
+.btn--color-light {
+    background: $light-bg;
+}
+
+.btn--color-dark {
+    color: $primary-color;
+    background: $mokko-bg;
+}
+
+.border-gradient {
+    border: 2px solid;
+    border-image-slice: 1;
+    border-width: 2px;
+}

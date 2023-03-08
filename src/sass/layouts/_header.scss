@@ -1,5 +1,54 @@
 // ----- HERO -------
 
+.header {
+    position: absolute;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-right: 31px;
+
+    @include tablet {
+        padding-top: 32px;
+        padding-bottom: 32px;
+        padding-right: 20px;
+    }
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+
+}
+
+.header__logo {
+    // @include max-mobile {
+
+    // }
+
+    @include tablet {
+        margin-right: 62px;
+    }
+
+    @include desktop {
+        margin-right: 131px;
+    }
+}
+
+.nav {
+    // display: none;
+    display: flex;
+
+    @include tablet {
+        display: flex;
+    }
+}
+
+.nav__list {
+    display: flex;
+    gap: 30px;
+}
+
+
 .nav__link {
     font-weight: 400;
     font-size: 20px;
@@ -8,4 +57,50 @@
     text-transform: capitalize;
 
     color: $main-fonts-color;
+    @include transition();
+    transition-property: color;
+
+    &:focus,
+    &:hover {
+        text-shadow: 1px 1px 10px rgba(236, 118, 5, 0.9);
+    }
+}
+
+.header__connect {
+    display: none;
+
+    @include tablet {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+    }
+
+    @include desktop {
+        flex-direction: row;
+    }
+}
+
+.connect__phone {
+    @include fonts(400, 12, 1.36, 0.01em);
+    color: $main-fonts-color;
+    @include transition();
+    transition-property: color;
+
+    &:focus,
+    &:hover {
+        color: $accent-color;
+    }
+
+    @include desktop {
+        margin-right: 40px;
+    }
+}
+
+.connect__button {
+
+    @include max-tablet {
+        margin-bottom: 20px;
+    }
 }
