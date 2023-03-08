@@ -1,5 +1,6 @@
-@import './normalize';
-@import './vars';
-@import './common';
+@import './utils/normalize';
+@import './utils/vars';
+@import './utils/breakpoints';
+@import './utils/common';
 @import './layouts/header';
 @import './layouts/hero';
