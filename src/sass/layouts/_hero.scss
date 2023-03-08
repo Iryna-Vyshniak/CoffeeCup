@@ -1,0 +1,36 @@
+.hero__title {
+    font-weight: 700;
+    font-size: 112px;
+    line-height: 134px;
+    text-transform: capitalize;
+
+    text-shadow: 185px 140px 65px rgba(0, 0, 0, 0.01), 118px 90px 59px rgba(0, 0, 0, 0.12), 67px 51px 50px rgba(0, 0, 0, 0.39), 30px 22px 37px rgba(0, 0, 0, 0.67), 7px 6px 20px rgba(0, 0, 0, 0.77), 0px 0px 0px rgba(0, 0, 0, 0.78);
+
+}
+
+
+.hero__after-title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 195.22%;
+
+    color: $secondary-fonts-color;
+
+}
+
+.about-content__title {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 34px;
+
+    text-align: center;
+    text-transform: capitalize;
+
+    background: linear-gradient(250.73deg, #E0A872 13.76%, #F8E4BE 49.91%, #FFF3E0 58.47%, #E0A872 95.09%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    //text-fill-color: transparent;
+    text-shadow: 2px 6px 5px rgba(0, 0, 0, 0.25);
+}

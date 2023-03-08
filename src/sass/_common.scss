@@ -1,4 +1,52 @@
 body {
     font-family: 'BioRhyme', serif;
-    //font-family: 'Dancing Script', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 218.5%;
+    letter-spacing: 0.02em;
+    color: $main-fonts-color;
+    background: $main-bg;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding-left: 0;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    display: block;
+    font-family: inherit;
+}
+
+a {
+    color: inherit;
+}
+
+address {
+    font-style: normal;
+}
+
+img {
+    display: block;
+}
+
+.list {
+    list-style: none;
+}
+
+.link {
+    text-decoration: none;
 }
