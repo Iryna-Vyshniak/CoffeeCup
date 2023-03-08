@@ -1,24 +1,160 @@
-.hero__title {
-    font-weight: 700;
-    font-size: 112px;
-    line-height: 134px;
-    text-transform: capitalize;
+.hero {
+    position: relative;
+    margin-top: -40px;
+}
 
-    text-shadow: 185px 140px 65px rgba(0, 0, 0, 0.01), 118px 90px 59px rgba(0, 0, 0, 0.12), 67px 51px 50px rgba(0, 0, 0, 0.39), 30px 22px 37px rgba(0, 0, 0, 0.67), 7px 6px 20px rgba(0, 0, 0, 0.77), 0px 0px 0px rgba(236, 118, 5, 0.9);
+.hero__container {
+    position: relative;
+
+    padding: 0;
+    min-height: 100vh;
+
+    background-image: url(../images/hero/hero.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left bottom;
+
+
+    @include retina {
+        background-image: $bg-gradient, url(../images/hero/hero@2x.png);
+    }
+
+
+    @include desktop {
+        //padding: 272px 100px 208px 100px;
+        // background-image: $bg-gradient, url(../img/hero/hero-bg-dt-min.jpg);
+
+        @include retina {
+            // background-image: $bg-gradient, url(../img/hero/hero-bg-dt@2x-min.jpg);
+        }
+
+        @include mobile {
+            width: 100%;
+        }
+
+        @include tablet {
+            width: 768px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        @include desktop {
+            width: 1200px;
+        }
+    }
+}
+
+.hero__container::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -2;
+    width: 40%;
+    height: 100%;
+    background: radial-gradient(114.24% 73.21% at 98.55% 92.63%, #3a1b1a7d 0%, #7c573c00 100%),
+        #7c573c;
+    flex-grow: 1;
+    box-shadow: -50px 0 50px #7C573C;
+}
+
+.hero__container::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+
+    width: 80%;
+    height: 90%;
+    color: transparent;
+    background-image: url(../images/hero/coffees.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: rotate(90deg);
+
+
+    @include retina {
+        background-image: url(../images/hero/coffees@2x.png);
+    }
+
+    @include tablet {
+        background-position: 0 50%;
+        transform: rotate(-90deg);
+    }
+
+    @include desktop {
+        background-position: 0 50%;
+        transform: rotate(-90deg);
+
+    }
 }
 
 
+.hero__content {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // transform: translate(-50%, -50%);
+    // z-index: 5;
+
+    display: grid;
+    place-content: center;
+
+
+    margin-bottom: 40px;
+    padding: 408px 31px 208px 31px;
+
+    filter: drop-shadow(930px 802px 344px rgba(32, 19, 22, 0.01)) drop-shadow(595px 513px 314px rgba(32, 19, 22, 0.06)) drop-shadow(335px 289px 265px rgba(32, 19, 22, 0.2)) drop-shadow(149px 128px 196px rgba(32, 19, 22, 0.34)) drop-shadow(37px 32px 108px rgba(32, 19, 22, 0.39)) drop-shadow(0px 0px 0px rgba(32, 19, 22, 0.4));
+
+
+    @include min-max-tablet {
+        place-content: flex-start;
+    }
+
+    @include desktop {
+        place-content: flex-start;
+    }
+
+
+}
+
+
+.hero__title {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: $typical-margin;
+    @include fonts(700, 68, 1.18, 0.05em);
+    text-transform: capitalize;
+    text-align: center;
+
+    text-shadow: 185px 140px 65px rgba(0, 0, 0, 0.01), 118px 90px 59px rgba(0, 0, 0, 0.12), 67px 51px 50px rgba(0, 0, 0, 0.39), 30px 22px 37px rgba(0, 0, 0, 0.67), 7px 6px 20px rgba(0, 0, 0, 0.77), 0px 0px 0px rgba(236, 118, 5, 0.9);
+
+
+    @include mobile {
+        font-size: 68px;
+    }
+
+    @include desktop {
+        @include fonts(700, 112, 1.18, 0.05em);
+    }
+}
+
 .hero__after-title {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 195.22%;
-
+    margin-bottom: 40px;
+    max-width: 475px;
     color: $secondary-fonts-color;
+    @include fonts(700, 20, 1.18, 0.05em);
 
+    @include tablet {
+        @include fonts(null, 18, 1.67);
+        max-width: 360px;
+    }
 }
 
 .about-content__title {
+    margin-bottom: $typical-margin;
     font-weight: 500;
     font-size: 28px;
     line-height: 34px;
@@ -26,4 +162,74 @@
     text-align: center;
     text-transform: capitalize;
     text-shadow: 2px 6px 5px rgba(0, 0, 0, 0.25);
+}
+
+.about-content__img {
+    max-width: 100%;
+    width: 130px;
+}
+
+.hero__shop {
+    margin-right: 15px;
+}
+
+.hero__about-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    padding: 12px;
+
+    max-width: 35%;
+    width: 364.28px;
+
+    background: rgba(74, 39, 33, 0.85);
+    backdrop-filter: blur(16.9695px);
+    border-radius: 50px 50px 0px 0px;
+
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 22px;
+        max-width: 45%;
+        width: 364.28px;
+    }
+
+}
+
+.about-content__link {
+    display: block;
+    width: 80px;
+    height: 40px;
+    border-radius: 50%;
+    @include fonts(700, 12, 1.18, 0.05em);
+
+    @include tablet {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 167px;
+        height: 40px;
+        padding: 8px;
+
+        border-radius: 49px;
+        text-align: center;
+        letter-spacing: 0.02em;
+
+    }
+}
+
+.about-content__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

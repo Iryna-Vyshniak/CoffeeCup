@@ -14,6 +14,7 @@
     border-image-source: linear-gradient(#E0A872 100%, #F8E4BE 100%, #FFF3E0 100%, #E0A872 100%);
     background: rgba(247, 225, 188, 0.3);
     color: $secondary-color;
+    text-align: center;
 
     @include transition ();
     transition-property: color, background-color;
