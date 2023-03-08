@@ -1,14 +1,11 @@
 .hero {
     position: relative;
     margin-top: -40px;
-    max-width: 80rem;
 }
 
 .hero__container {
     position: relative;
-    top: 0;
-    left: 0;
-
+    margin: 0 auto;
     padding: 0;
     min-height: 100vh;
 
@@ -22,30 +19,21 @@
         background-image: $bg-gradient, url(../images/hero/hero@2x.png);
     }
 
+    @include mobile {
+        width: 100%;
+    }
+
+    @include tablet {
+
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 
     @include desktop {
-        //padding: 272px 100px 208px 100px;
-        // background-image: $bg-gradient, url(../img/hero/hero-bg-dt-min.jpg);
-
-        @include retina {
-            // background-image: $bg-gradient, url(../img/hero/hero-bg-dt@2x-min.jpg);
-        }
-
-        @include mobile {
-            width: 100%;
-        }
-
-        @include tablet {
-
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-
-        @include desktop {
-            width: 1200px;
-        }
+        width: 1200px;
     }
 }
+
 
 .hero__container::after {
     content: '';
@@ -116,18 +104,12 @@
 }
 
 .hero__content {
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // transform: translate(-50%, -50%);
-    // z-index: 5;
-
+    position: relative;
     display: grid;
-    place-content: center;
-
+    place-content: flex-start;
 
     margin-bottom: 40px;
-    padding: 408px 31px 208px 31px;
+    padding: 170px 31px 208px 31px;
 
     filter: drop-shadow(930px 802px 344px rgba(32, 19, 22, 0.01)) drop-shadow(595px 513px 314px rgba(32, 19, 22, 0.06)) drop-shadow(335px 289px 265px rgba(32, 19, 22, 0.2)) drop-shadow(149px 128px 196px rgba(32, 19, 22, 0.34)) drop-shadow(37px 32px 108px rgba(32, 19, 22, 0.39)) drop-shadow(0px 0px 0px rgba(32, 19, 22, 0.4));
 
@@ -168,13 +150,52 @@
     margin-bottom: 40px;
     max-width: 475px;
     color: $secondary-fonts-color;
-    @include fonts(700, 20, 1.18, 0.05em);
+    @include fonts(700, 14, 1.18, 0.05em);
 
     @include tablet {
         @include fonts(null, 18, 1.67);
         max-width: 360px;
     }
 }
+
+.hero__shop {
+    margin-right: 15px;
+}
+
+.hero__about-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    //z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    padding: 12px;
+
+    max-width: 35%;
+    width: 364.28px;
+
+    background: rgba(74, 39, 33, 0.85);
+    backdrop-filter: blur(16.9695px);
+    border-radius: 50px 50px 0px 0px;
+
+    box-shadow: 1px 20px 20px rgb(74, 39, 33);
+
+
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 22px;
+        max-width: 45%;
+        width: 364.28px;
+    }
+
+}
+
 
 .about-content__title {
     margin-bottom: $typical-margin;
@@ -192,40 +213,15 @@
     width: 130px;
 }
 
-.hero__shop {
-    margin-right: 15px;
-}
 
-.hero__about-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-
+.about-content__wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px;
-
-    padding: 12px;
-
-    max-width: 35%;
-    width: 364.28px;
-
-    background: rgba(74, 39, 33, 0.85);
-    backdrop-filter: blur(16.9695px);
-    border-radius: 50px 50px 0px 0px;
-
-    @include tablet {
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 22px;
-        max-width: 45%;
-        width: 364.28px;
-    }
-
 }
+
+
 
 .about-content__link {
     display: block;
@@ -248,11 +244,4 @@
         letter-spacing: 0.02em;
 
     }
-}
-
-.about-content__wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }

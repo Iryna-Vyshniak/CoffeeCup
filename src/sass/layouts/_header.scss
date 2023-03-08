@@ -6,16 +6,17 @@
     left: 0;
     z-index: 10;
     width: 100%;
-    min-height: $header-height;
+    min-height: 20px;
 
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding-right: 31px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 8px;
 
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(.3125rem);
 
     @include tablet {
+        min-height: $header-height;
         padding-top: 32px;
         padding-bottom: 32px;
         padding-right: 20px;
@@ -126,7 +127,7 @@
 
     &:focus,
     &:hover {
-        color: $secondary-color;
+        background: transparent;
     }
 
     @include desktop {
