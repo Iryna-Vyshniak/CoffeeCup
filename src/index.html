@@ -16,7 +16,7 @@
     <script type="module" src="./app/index.js"></script>
   </head>
   <body>
-    <header class="head">
+    <header class="header">
       <div class="header__container">
         <a href="#" class="header__logo link logo">
           <img src="./images/hero/logo.png" alt="logo" />
@@ -24,7 +24,7 @@
         <nav class="nav">
           <ul class="nav__list list">
             <li class="nav__item">
-              <a href="#" class="nav__link link">Home</a>
+              <a href="#" class="nav__link link active">Home</a>
             </li>
             <li class="nav__item">
               <a href="#" class="nav__link link">About</a>
@@ -38,7 +38,9 @@
           </ul>
         </nav>
         <div class="header__connect connect">
-          <a class="connect__phone link" href="tel:+380441111111"
+          <a
+            class="connect__phone btn btn--color-dark border-gradient link"
+            href="tel:+380441111111"
             >+38 044 111 11 11</a
           >
           <button
@@ -49,6 +51,7 @@
             Online-booking
           </button>
         </div>
+        <div class="header__menu-btn"></div>
       </div>
     </header>
     <main>
@@ -79,12 +82,14 @@
               alt="cup of coffe"
               class="about-content__img"
             />
-            <h4 class="about-content__title title">buy first coffee</h4>
-            <a
-              href="#"
-              class="about-content__link link btn border-gradient btn--color-dark"
-              >hurry up</a
-            >
+            <div class="about-content__wrapper">
+              <h4 class="about-content__title title">buy first coffee</h4>
+              <a
+                href="#"
+                class="link btn border-gradient btn--color-dark about-content__link"
+                >hurry up</a
+              >
+            </div>
           </div>
         </div>
       </section>
