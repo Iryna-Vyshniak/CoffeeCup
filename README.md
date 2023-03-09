@@ -1,6 +1,6 @@
 ## CoffeeCup
 
-It`s demo simple project based on Sample APIs
+It`s demo simple project based on Coffee APIs
 
 ## Parcel template
 
