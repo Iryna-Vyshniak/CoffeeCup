@@ -1,6 +1,6 @@
 import debounce from 'lodash.debounce';
 import { Report } from 'notiflix/build/notiflix-report-aio';
-import { setImages } from './setImages';
+//import { setImages } from './setImages';
 //import { closeQuickView, openQuickView } from './viewCard';
 
 const nav = document.querySelector('.nav');
