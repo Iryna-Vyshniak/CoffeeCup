@@ -53,6 +53,8 @@ footer {
 
 
 .contacts__title {
+    -webkit-text-fill-color: $secondary-fonts-color;
+    color: $secondary-fonts-color;
     margin-bottom: $typical-margin;
     font-size: 24px;
 
