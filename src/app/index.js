@@ -1,5 +1,6 @@
 import debounce from 'lodash.debounce';
 import { Report } from 'notiflix/build/notiflix-report-aio';
+import { setImages } from './setImages';
 //import { closeQuickView, openQuickView } from './viewCard';
 
 const nav = document.querySelector('.nav');
@@ -78,7 +79,7 @@ const coffeeList = document.querySelector('[data-coffee]');
 const options = {
   method: 'GET',
   headers: {
-    'X-RapidAPI-Key': 'a41b6c96efmshd5b88ff78c43fc6p16e7fcjsnd8e43058f641',
+    'X-RapidAPI-Key': 'e9932c3c72msh221f1c6b7e0eb68p147cecjsnf661410b5799',
     'X-RapidAPI-Host': 'the-coffee-api.p.rapidapi.com',
   },
 };
