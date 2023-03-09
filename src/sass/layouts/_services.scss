@@ -140,6 +140,13 @@
     }
 }
 
+.recipe,
+.card-title {
+    -webkit-text-fill-color: $secondary-fonts-color;
+    color: $secondary-fonts-color;
+}
+
+
 .card-body {
     font-size: 22px;
 
