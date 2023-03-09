@@ -118,11 +118,15 @@
 .card-text {
     margin: -30px auto;
     margin-bottom: -50px;
-    height: 300px;
+    padding: 20px;
+
     width: 300px;
+    min-height: 350px;
+    height: auto;
+
     background: $bg-gradient;
     color: $main-fonts-color;
-    padding: 20px;
+
 }
 
 .recipe,
@@ -151,7 +155,6 @@
     background: #54372B;
     background: -webkit-linear-gradient(to right, #D66801, #3A1B1A);
     background: linear-gradient(to right, #D66801, #3A1B1A);
-    // background-color: $accent-color;
     color: #fff;
     text-shadow: 1px 1px 1px $secondary-color;
     margin-left: auto;
