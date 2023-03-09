@@ -3,7 +3,6 @@
 const nav = document.querySelector('.nav');
 const menuBtn = document.querySelector('.header__menu-btn');
 const searchbox = document.querySelector('[data-input]');
-console.log(searchbox);
 
 // Sets the nav and menuBtn.
 // Add click event listener to the menu. Toggle the active and active state of the menu.
