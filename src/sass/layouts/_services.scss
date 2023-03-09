@@ -91,6 +91,7 @@
 .fullwidth,
 .is-selected {
     background: $light-bg;
+    color: $secondary-color;
 }
 
 
@@ -120,29 +121,32 @@
     height: 300px;
     width: 300px;
     background: $bg-gradient;
-    color: #fff;
+    color: $main-fonts-color;
     padding: 20px;
 }
 
-.card-meal-type {
-    font-style: italic;
-}
-
+.recipe,
+.text-title,
 .card-title {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    margin-top: 5px;
+    margin-bottom: $typical-margin;
+    font-size: 24px;
+
+    @include tablet {
+        font-size: 34px;
+    }
 }
 
 .card-body {
-    font-size: 1.25rem;
+    font-size: 22px;
+
+    @include tablet {
+        font-size: 24px;
+    }
 }
 
 .card-price {
     width: 100px;
     height: 100px;
-
-
 
     background: #54372B;
     background: -webkit-linear-gradient(to right, #D66801, #3A1B1A);
@@ -155,6 +159,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+.services__item-view:nth-child(2) {
+    align-self: center;
 }
 
 .services__btn-close {
@@ -183,4 +192,12 @@
     box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5);
 
     @include fonts(700, 12, 1.18, 0.05em);
+}
+
+.text-ingredients {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-self: center;
 }
