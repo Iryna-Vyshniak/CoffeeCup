@@ -72,3 +72,18 @@ img {
         max-width: 1280px;
     }
 }
+
+section {
+    padding-top: 84px;
+    padding-bottom: 84px;
+
+    @include tablet {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    @include desktop {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+}

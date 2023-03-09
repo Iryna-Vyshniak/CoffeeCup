@@ -94,7 +94,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 0;
+    z-index: -1;
 
     width: 50%;
     height: 50%;
@@ -153,7 +153,7 @@
     @include fonts(700, 14, 1.18, 0.05em);
 
     @include tablet {
-        @include fonts(null, 18, 1.67);
+        @include fonts(null, 24, 1.67);
         max-width: 360px;
     }
 }

@@ -1,0 +1,136 @@
+// .story {}
+
+// .story__container {}
+
+.story__wrapper {
+    position: relative;
+}
+
+.story__title {
+    position: absolute;
+    top: -10%;
+    right: 0;
+    z-index: 1;
+
+    text-align: right;
+
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 210%;
+
+    text-transform: capitalize;
+
+    color: $btn-fonts-color;
+
+    text-shadow: 0px 69px 19px rgba(32, 19, 22, 0.01), 0px 44px 18px rgba(32, 19, 22, 0.09), 0px 25px 15px rgba(32, 19, 22, 0.31), 0px 11px 11px rgba(32, 19, 22, 0.52), 0px 3px 6px rgba(32, 19, 22, 0.6), 0px 0px 0px rgba(32, 19, 22, 0.62);
+
+
+    @include mobile {
+        font-size: 54px;
+    }
+
+    @include tablet {
+        top: -14%;
+    }
+
+    @include desktop {
+        top: -20%;
+    }
+}
+
+
+
+.story__list {
+    position: relative;
+
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 101px;
+
+    padding: 28px;
+
+    background: rgba(173, 113, 74, 0.35);
+    backdrop-filter: blur(2px);
+    border-radius: 35px;
+
+    @include desktop {
+        flex-basis: calc((100% - 30px) / 2);
+        flex-direction: row;
+        left: 0;
+        top: 25%;
+    }
+}
+
+.story__item-img {
+
+    width: 100%;
+    background-image: url(../images/hero/coffees.png);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include retina {
+        background-image: url(../images/hero/coffees@2x.png);
+    }
+
+    img {
+        position: absolute;
+        top: 75%;
+        right: 0;
+        z-index: 1;
+
+        width: 352px;
+
+        filter: drop-shadow(0px 153px 61px rgba(32, 19, 22, 0.03)) drop-shadow(0px 86px 52px rgba(32, 19, 22, 0.1)) drop-shadow(0px 38px 38px rgba(32, 19, 22, 0.17)) drop-shadow(0px 10px 21px rgba(32, 19, 22, 0.2)) drop-shadow(0px 0px 0px rgba(32, 19, 22, 0.2));
+
+
+        @include mobile {
+            top: 75%;
+            right: 0;
+
+            width: 552px;
+
+        }
+
+        @include tablet {
+            left: -20%;
+            top: 15%;
+        }
+
+        @include min-max-tablet {
+            left: -20%;
+            top: 5%;
+        }
+
+        @include desktop {
+            left: -5%;
+            top: -15%;
+        }
+
+    }
+}
+
+
+.story__item p {
+    font-size: calc($index * .8);
+
+    line-height: 1.6;
+    text-transform: capitalize;
+    color: $main-fonts-color;
+
+    @include mobile {
+        font-size: 18px;
+
+    }
+
+    @include tablet {
+        padding-left: 275px;
+    }
+
+    @include desktop {
+        padding-left: 150px;
+    }
+}
