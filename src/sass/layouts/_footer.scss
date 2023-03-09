@@ -1,0 +1,214 @@
+footer {
+    width: 100%;
+    background: linear-gradient(rgba(51, 33, 29, .9), rgba(51, 33, 29, .9)),
+        url(../images/bg.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.footer__contacts {
+    padding: 15px;
+}
+
+.contacts {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-direction: column;
+    column-gap: $typical-margin;
+
+    @include tablet {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    @include desktop {
+
+        flex-wrap: nowrap;
+    }
+}
+
+.contacts__item {
+    padding: 10px;
+    width: 100%;
+
+    @include max-mobile {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    @include tablet {
+        flex-wrap: wrap;
+        @include flex-basis(2, 20px);
+    }
+
+    @include desktop {
+        @include flex-basis(4, 20px);
+    }
+}
+
+
+
+.contacts__title {
+    margin-bottom: $typical-margin;
+    font-size: 24px;
+
+    @include tablet {
+        font-size: 34px;
+    }
+}
+
+.form__control {
+    margin-bottom: $typical-margin;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $mokko-bg;
+    @include transition();
+    transition-property: color;
+
+    &:focus,
+    &:hover {
+        border-bottom: 1px solid $secondary-color;
+    }
+
+    &:focus::placeholder,
+    &:hover::placeholder {
+        color: $primary-color;
+    }
+
+}
+
+.contacts__btn {
+    display: block;
+    width: 80px;
+    height: 40px;
+
+    align-self: center;
+
+    border-radius: 50%;
+    color: $primary-color;
+    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5);
+
+    @include fonts(700, 12, 1.18, 0.05em);
+
+}
+
+
+.sns-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.sns-list__item {
+    @include circle();
+}
+
+.sns-list__link {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: $primary-color;
+    @include transition ();
+    transition-property: fill, background-color;
+
+    &:focus,
+    &:hover {
+        background: linear-gradient(250.73deg, #E0A872 13.76%, #F8E4BE 49.91%, #FFF3E0 58.47%, #E0A872 95.09%);
+        fill: $secondary-color;
+    }
+}
+
+// address
+
+.contacts__address-map {
+    display: block;
+    margin-top: 0;
+    margin-bottom: $typical-margin;
+
+    @include transition ();
+    transition-property: color;
+
+    &:focus,
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+.address-list__item:not(:last-child) {
+    margin-bottom: $typical-margin;
+}
+
+.address-list__link {
+    @include transition ();
+    transition-property: color, fill, stroke;
+
+    &:focus,
+    &:hover,
+    &:focus .contacts-icon,
+    &:hover .contacts-icon {
+        color: $btn-fonts-color;
+        fill: $btn-fonts-color;
+        stroke: $btn-fonts-color;
+    }
+}
+
+.contacts-icon {
+    display: inline-block;
+    vertical-align: text-bottom;
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    fill: currentColor;
+    stroke: currentColor;
+}
+
+.city {
+    display: inline-block;
+    margin-left: 44px
+}
+
+.contacts__address-map,
+.address-list__link,
+.text {
+    padding: 8px;
+    font-size: calc($index * .8);
+
+    line-height: 1.6;
+    color: $main-fonts-color;
+
+    @include mobile {
+        font-size: 18px;
+
+    }
+
+}
+
+
+.data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border-top: 2px solid rgba(256, 256, 256, .1);
+
+    p {
+        color: $primary-color;
+    }
+
+
+    // &__copyright {}
+
+    // &__link {}
+
+    // &__designed {}
+}
