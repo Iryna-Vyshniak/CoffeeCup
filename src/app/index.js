@@ -1,3 +1,5 @@
+import debounce from 'lodash.debounce';
+import { Report } from 'notiflix/build/notiflix-report-aio';
 //import { closeQuickView, openQuickView } from './viewCard';
 
 const nav = document.querySelector('.nav');
@@ -12,6 +14,14 @@ menuBtn.addEventListener('click', () => {
 });
 
 // search
+searchbox.addEventListener(
+  'input',
+  debounce(() => {
+    const value = searchbox.value.trim();
+    searchCoffee(value);
+  }),
+  300
+);
 
 const createCoffeeCard = ({
   name,
@@ -33,8 +43,6 @@ const createCoffeeCard = ({
                 </p>
               </div>
               <div class="card-price">${randomNumber(10)}$</div>
-
-               <p class="text">1</p>
               <button
                 type="button"
                 class="btn services__btn-view"
@@ -77,7 +85,7 @@ const options = {
 
 const searchCoffee = query => {
   return fetch(
-    'https://the-coffee-api.p.rapidapi.com/drinks/latte?keys=description%2ChasAlcohol%2CcupSize%2Crecipe',
+    `https://the-coffee-api.p.rapidapi.com/drinks/${query}?keys=description%2ChasAlcohol%2CcupSize%2Crecipe`,
     options
   )
     .then(response => response.json())
@@ -155,7 +163,15 @@ const searchCoffee = query => {
     .catch(err => console.error(err));
 };
 
-searchCoffee('latte');
+function onError(err) {
+  Report.failure(
+    '🥺 Ooops...',
+    'Articles not found... Please, search another article.',
+    'Okay'
+  );
+}
+
+//searchCoffee('latte');
 
 const getIngredients = arr =>
   arr
