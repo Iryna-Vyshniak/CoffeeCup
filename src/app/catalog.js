@@ -3,6 +3,16 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const galleryContainer = document.querySelector('.gallery');
+const nav = document.querySelector('.nav');
+const menuBtn = document.querySelector('.header__menu-btn');
+const searchbox = document.querySelector('[data-input]');
+
+// Sets the nav and menuBtn.
+// Add click event listener to the menu. Toggle the active and active state of the menu.
+menuBtn.addEventListener('click', () => {
+  menuBtn.classList.toggle('active');
+  nav.classList.toggle('active');
+});
 
 function renderMarkup(items) {
   return items.reduce(
