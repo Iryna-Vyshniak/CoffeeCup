@@ -91,7 +91,7 @@ const searchCoffee = query => {
   )
     .then(response => response.json())
     .then(data => {
-      console.log(data);
+      // console.log(data);
       insertMarkup(data);
 
       // open-hidden coffee-card
