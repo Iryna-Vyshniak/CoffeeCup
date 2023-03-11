@@ -89,7 +89,12 @@ const searchCoffee = query => {
     `https://the-coffee-api.p.rapidapi.com/drinks/${query}?keys=description%2ChasAlcohol%2CcupSize%2Crecipe`,
     options
   )
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(response.status);
+      }
+      return response.json();
+    })
     .then(data => {
       // console.log(data);
       insertMarkup(data);
