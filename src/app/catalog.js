@@ -7,6 +7,12 @@ const nav = document.querySelector('.nav');
 const menuBtn = document.querySelector('.header__menu-btn');
 const searchbox = document.querySelector('[data-input]');
 
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+  scrollZoom: false,
+});
+
 // Sets the nav and menuBtn.
 // Add click event listener to the menu. Toggle the active and active state of the menu.
 menuBtn.addEventListener('click', () => {
@@ -31,24 +37,20 @@ function renderMarkup(items) {
 function setTitleImages(value) {
   const API_KEY = 'nK8dQ9g0n9ztLpNfMUyyoRWjFaSsbPf5sCCcMrST8otmYHlyeXOtDq1p';
   const client = createClient(API_KEY);
-  let query = 'Coffee';
+  let query = 'Sun Coffee';
 
   client.photos
     .search({ query, per_page: 40 })
     .then(({ photos }) => {
-      console.log(photos);
-      console.log(renderMarkup(photos));
+      // console.log(photos);
+      // console.log(renderMarkup(photos));
       return renderMarkup(photos);
     })
-    .then(data => (galleryContainer.innerHTML = data))
+    .then(data => {
+      galleryContainer.innerHTML = data;
+      lightbox.refresh();
+    })
     .catch(err => console.log(err));
 }
 
 setTitleImages();
-
-const lightbox = new SimpleLightbox('.gallery a', {
-  closeText: 'x',
-  captionsData: 'alt',
-  captionDelay: 250,
-  scrollZoom: false,
-});
